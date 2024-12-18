@@ -1,0 +1,728 @@
+/*!!READ THIS FIRST!!*/
+/*If you want a setting/effect, whatever, which is greyed out, then just add a asterisk & slash to the end of the line like this one/remove the asterisk & slash from front of a few lines, if you still can't figure out, then ask Chatgpt.com*/
+/* Common pointer events */
+.titlebar-buttonbox-container,
+.titlebar-buttonbox,
+.titlebar-button,
+#urlbar,
+#urlbar-input,
+.urlbarView-body-outer,
+.urlbarView-body-inner {
+  pointer-events: auto !important;
+}
+
+/* Hidden Elements, hides the workspace label below the essentials
+#urlbar [id$="-container"],
+#zen-current-workspace-indicator,
+label[value="Not Secure"] {
+  display: none;
+}
+
+/*Moves the titlebar buttons a lil closer to the edge, but it's only for the minimal exit buttons mod
+.titlebar-buttonbox {
+    left: 10px;
+  }
+
+/*Hide Extensions unless hovered
+
+.unified-extensions-item {
+  opacity: 0; 
+  transition: opacity 0.25s ease-in-out;
+}
+
+.unified-extensions-item:hover{
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+#unified-extensions-area>.unified-extensions-item {
+  opacity: 1 !important;
+}
+
+/* Apply specific colors to pinned tabs  */
+  .tabbrowser-tab[pinned]:nth-of-type(1) .tab-background {
+    background-color: rgba(93, 155, 255, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(2) .tab-background {
+    background-color: rgba(145, 80, 255, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(3) .tab-background {
+    background-color: rgba(225, 225, 225, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(4) .tab-background {
+    background-color: rgba(255, 100, 100, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(5) .tab-background {
+    background-color: rgba(255, 115, 60, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(6) .tab-background {
+    background-color: rgba(255, 100, 100, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(7) .tab-background {
+    background-color: rgba(200, 80, 255, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(8) .tab-background {
+    background-color: rgba(255, 152, 0, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(9) .tab-background {
+    background-color: rgba(63, 81, 181, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(10) .tab-background {
+    background-color: rgba(76, 175, 80, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(11) .tab-background {
+    background-color: rgba(103, 58, 183, 0.15) !important;
+    box-shadow: none !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(12) .tab-background {
+    background-color: rgba(0, 150, 136, 0.15) !important;
+    box-shadow: none !important;
+  }
+  
+  /* Add hover effect for pinned tabs */
+  .tabbrowser-tab[pinned]:nth-of-type(1):hover .tab-background {
+    background-color: rgba(93, 155, 255, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(2):hover .tab-background {
+    background-color: rgba(155, 100, 255, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(3):hover .tab-background {
+    background-color: rgba(240, 240, 240, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(4):hover .tab-background {
+    background-color: rgba(255, 100, 100, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(5):hover .tab-background {
+    background-color: rgba(255, 125, 75, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(6):hover .tab-background {
+    background-color: rgba(255, 100, 100, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(7):hover .tab-background {
+    background-color: rgba(205, 95, 255, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(8):hover .tab-background {
+    background-color: rgba(255, 152, 0, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(9):hover .tab-background {
+    background-color: rgba(63, 81, 181, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(10):hover .tab-background {
+    background-color: rgba(76, 175, 80, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(11):hover .tab-background {
+    background-color: rgba(103, 58, 183, 0.25) !important;
+  }
+  .tabbrowser-tab[pinned]:nth-of-type(12):hover .tab-background {
+    background-color: rgba(0, 150, 136, 0.25) !important;
+  }
+
+/* Animate new tab appear animation *//*Cool*/
+#vertical-pinned-tabs-container, #tabbrowser-arrowscrollbox {
+  .tabbrowser-tab {
+    animation: new-tab-appear 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+}
+
+
+@keyframes new-tab-appear { 
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  60% {
+    opacity: 0.8  ;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mica For EveryOne | Tho, this piece of code is not required, but it darkens the mica effect a bit, which looks, noice!*/
+@-moz-document url-prefix("chrome:") {    #statuspanel {    margin: 10px !important;  }    #statuspanel-label {    border-radius: 10000px !important;    padding: 2px 10px !important;    border: 1px solid var(--zen-colors-border) !important;    background: var(--zen-colors-tertiary) !important;  }  }
+#navigator-toolbox{
+    background-color:rgba(0,0,0,0) !important;
+  }
+  #main-window{
+  background-color: rgba(0, 0, 0, 0.25) !important;/*Modify the last value, like, here 0.25, to increase or decrease the brighness of the mica/blur/translucency*/
+  -moz-appearance: none !important;
+  background-image: none !important;
+  --zen-main-browser-background: rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .tab-icon-image[src="chrome://branding/content/icon32.png"], .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
+  content: url('https://raw.githubusercontent.com/tabler/tabler-icons/refs/heads/main/icons/filled/bolt.svg') !important;
+  filter : invert(100%) !important;
+  }
+  
+  .tab-icon-overlay {
+    display: none !important;
+  }
+  
+
+
+/*Asev's modified CSS*/
+
+/*Set Font to Poppins, browser-wide
+* {
+    font-family: 'Poppins', sans-serif;
+  }
+
+/*Browser's webview, I guess, the place where websites are displayed??*/
+.browserSidebarContainer {
+    background-color: rgba(0, 0, 0, 0.225) !important; /* Browser Container transparency */
+    border-radius: 5px !important; /*Webview's Radius*/
+} 
+
+/*idk*/
+@media (-moz-bool-pref: "zen.tabs.vertical") {
+  #navigator-toolbox:is(#navigator-toolbox[zen-user-hover="true"][zen-has-hover], #navigator-toolbox[zen-user-hover="true"]:focus-within, #navigator-toolbox[zen-user-hover="true"][movingtab], #navigator-toolbox[zen-user-hover="true"][flash-popup], #navigator-toolbox[zen-user-hover="true"][has-popup-menu], #navigator-toolbox[zen-user-hover="true"]:has([open="true"]:not(tab):not(#zen-sidepanel-button)), #navigator-toolbox[zen-expanded="true"]:not([zen-user-hover="true"])) {
+    & #zen-essentials-container {
+      --tab-min-height: 47px !important;
+    }
+  }
+}
+
+
+/*Transition for pinned & essentials background */
+.tabbrowser-tab .tab-background{
+    transition: background-color 0.3s ease;
+  }
+
+/*Border for Essentials*/
+.tabbrowser-tab[pinned]:is([zen-essential="true"]) .tab-stack .tab-background {
+    /*border: 1px solid #ffffff13 !important; /*Uncomment it if you want it*/
+}
+/*When essentials tabs are selected/active*/
+.tabbrowser-tab[pinned] .tab-background:is([selected], [multiselected]) {
+	border-top: 1px solid #ffffff1f !important;
+	border-bottom: 1px solid #0000001f !important;
+}
+
+/*Border for the pinned tabs*/
+.tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background {
+    border: 1px solid #ffffff13 !important;
+}
+/*When pinned tabs are selected/active*/
+.tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background:is([selected], [multiselected]) {
+    border-top: 1px solid #ffffff2d !important;
+    border-bottom: 1px solid #0000002d !important;
+    background-color: rgba(255, 255, 255, 0.17) !important;
+}
+
+/*Styling for regular tabs i.e, non pinned/essential tabs*/
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, .tab-background:is([selected], [multiselected]) {
+	box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.17) !important;
+}
+
+
+  
+/*Got some more styling from Mr. Not Yes, did he change his name from Mr. Yes?*/
+/*This style replaces the non-active workspaces with a single dot*/
+/*If you  like that, then add the asterisk & slash in front of this line*/
+.subviewbutton:not([active])>.zen-workspace-icon {
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%225%22%20fill%3D%22%23d3d3d3%22/%3E%3C/svg%3E');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: transparent;
+  fill: grey !important;
+  height: 6px !important;
+
+}
+
+
+#zen-workspaces-button[open ="true"] > .subviewbutton:not([active]) >.zen-workspace-icon{
+  background-image: none !important;
+  color: unset !important;
+  height: unset !important;
+}
+
+
+  /*Styling for the workspace button*/
+  #zen-workspaces-button {
+    .subviewbutton {
+        &[active="true"] {
+            background: rgba(255, 255, 255, 0.1) !important; /*Change the last value to 0.1, if you want background for the active workspace*/
+            transition: 0.3s !important;
+            border: 0px solid #ffffff0a !important;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062) !important;}
+        
+  
+        &:hover {
+            background: rgba(255, 255, 255, 0.08) !important; /*Change the last value to 0, if you want no background for hover*/
+            transition: 0.3s !important;
+        }
+  
+        &:after {
+            display: none !important;
+        }
+  
+    }
+  }
+
+  /*Some more styling for the, workspace button*/
+ #zen-workspaces-button {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.1) !important;
+    border-radius: 8px !important;
+    border: 1px solid #ffffff0c !important;
+    background: none !important; /*Removes the background*/
+    border: none !important; /*Removes the border, idiot*/
+    box-shadow: unset !important; /*Removes the box-shadow*/
+    /*display: none !important; /*Uncomment to hide the workspace button*/
+  }
+
+
+/*Styling for Tab close button*/
+  .tab-close-button {
+      width: 18px !important;
+      height: 18px !important;
+      padding: 5px !important;
+      border-radius: 20px !important;
+  }
+
+/*Tab close button colors, also for hover*/
+  .close-icon {
+      background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
+  }
+  
+  .close-icon:hover {
+      transition: 0.5s !important;
+      background-color: color-mix(in srgb, currentColor 20%, transparent) !important;
+  }
+  
+
+/* This style simply makes the tab stay visible while it is being closed as well as makes the transition a bit slower */
+  
+  .tabbrowser-tab:not([pinned],[fadein]){
+    transition-duration: 240ms, 240ms !important;
+    transition-timing-function: ease-out, ease-out !important;
+    visibility: visible !important;
+  }
+  .tab-content:not([fadein],[pinned])
+  .tab-icon-pending:not([fadein]),
+  .tab-icon-image:not([fadein]),
+  .tab-label:not([fadein]){
+    visibility: visible !important;
+  }
+  .tab-label:not([fadein]){
+    display: flex !important;
+  }
+  
+/*Centers the tab group label
+.tab-group-label-container{
+  display: grid;
+  place-content: center !important;
+}*/
+
+/*Styling for urlbar, gives border and, a lil bit of padding*/
+#urlbar-background{
+  border: 1px solid #ffffff13 !important;
+}
+
+#urlbar-input{
+  padding: 0px 0px 0px 7px !important;
+}
+
+#navigator-toolbox{
+  background-color:rgba(0,0,0,0) !important;
+}
+
+
+/*Set Font to Poppins, but only for tab groups
+tab-group {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*1st option for tab group styling*//*There's one more below, at line, 423, that one's a bit different and has good animations*/
+/*Styling for tab groups*/
+tab-group{/*Remove the double slash from the front of this line to enable this tab group styling*/
+  display: grid !important;
+  background: color-mix(in srgb, var(--tab-group-color-invert) 11%, transparent) !important;/*Modify to change the level of transparency/brightness*/
+  border-radius: var(--border-radius-medium);
+  margin-bottom: 1px;
+  margin-top: 2px;
+  margin-inline: 2px !important;/*The distance between the tab group's border & the sidebar's edge*/
+  border: 2px solid color-mix(in srgb, var(--tab-group-color-invert) 10%, transparent);
+  padding: 5px 0px !important;
+  transition: 0.15s !important;
+  & .tab-group-label-container{
+    margin-inline: 2px !important;/*The distance between the folder ico and title/label text & the tab group's border*/
+    width: 100%;
+    
+    &>label::before {/*Folder Ico*/
+      content: "" !important;
+      position: absolute !important;
+      left: 7px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 16px !important;
+      height: 16px !important;
+      background-color: var(--sidebar-text-color);
+      mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgOS41MDJWOC43NWEyLjI1IDIuMjUgMCAwIDAtMi4yNS0yLjI1aC01LjcyNWwtMi4zOC0xLjk4QTIuMjUgMi4yNSAwIDAgMCA4LjIwNCA0SDQuMjVBMi4yNSAyLjI1IDAgMCAwIDIgNi4yNWwtLjAwNCAxMS41QTIuMjUgMi4yNSAwIDAgMCA0LjI0NiAyMEgxOC40N2ExLjc1IDEuNzUgMCAwIDAgMS42OTgtMS4zMjVsMS43NS02Ljk5OGExLjc1IDEuNzUgMCAwIDAtMS42OTgtMi4xNzVIMjBaTTQuMjUgNS41aDMuOTU2YS43NS43NSAwIDAgMSAuNDguMTczbDIuNTg4IDIuMTU0YS43NS43NSAwIDAgMCAuNDguMTczaDUuOTk2YS43NS43NSAwIDAgMSAuNzUuNzV2Ljc1Mkg2LjQyNGEyLjI1IDIuMjUgMCAwIDAtMi4xODMgMS43MDRsLS43NDQgMi45NzhMMy41IDYuMjVhLjc1Ljc1IDAgMCAxIC43NS0uNzVabTEuNDQ3IDYuMDdhLjc1Ljc1IDAgMCAxIC43MjctLjU2OEgyMC4yMmEuMjUuMjUgMCAwIDEgLjI0Mi4zMWwtMS43NSA2Ljk5OWEuMjUuMjUgMCAwIDEtLjI0Mi4xODlINC4yODVhLjI1LjI1IDAgMCAxLS4yNDMtLjMxbDEuNjU1LTYuNjJaIiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    &:after{/*The separator between folder ico and label & the tabs*/
+      margin-bottom: -5px !important;
+      padding: 0px !important;
+      transform: scaleX(1) !important;
+      background-color: color-mix(in srgb, var(--tab-group-color) 30%, transparent) !important;
+      transition: transform 0.2s ease-out !important;
+      display: none !important;/*Comment this line here, or add double forward slash to get The separator between folder ico and label & the tabs*/
+    }
+    
+    & > label{/*Tab Group's folder ico and title/label text position and stuff*/
+      max-width: 100% !important;
+      padding-inline: 2.25em !important;
+      background: transparent !important;
+      border: unset !important;
+      font-weight: 600 !important;
+      text-align: unset !important;
+      color: var(--sidebar-text-color) !important;
+    }
+  }
+  
+  & tab {
+    transition: font-size 0.25s,
+                margin 0.25s,
+                padding 0.25s,
+                opacity 0.25s !important;
+  }
+  &[collapsed]{
+    padding: 5px 0px 3px 0px !important;
+    height: auto !important;
+    overflow: hidden !important;
+    
+    & .tab-group-label-container > label::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 7px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 16px !important;
+      height: 16px !important;
+      background-color: var(--sidebar-text-color);
+      mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC4yMDcgNGMuNDYgMCAuOTA4LjE0MSAxLjI4NC40MDJsLjE1Ni4xMkwxMi4wMjIgNi41aDcuNzI4YTIuMjUgMi4yNSAwIDAgMSAyLjIyOSAxLjkzOGwuMDE2LjE1OC4wMDUuMTU0djlhMi4yNSAyLjI1IDAgMCAxLTIuMDk2IDIuMjQ1TDE5Ljc1IDIwSDQuMjVhMi4yNSAyLjI1IDAgMCAxLTIuMjQ1LTIuMDk2TDIgMTcuNzVWNi4yNWEyLjI1IDIuMjUgMCAwIDEgMi4wOTYtMi4yNDVMNC4yNSA0aDMuOTU3Wm0xLjQ0IDUuOTc5YTIuMjUgMi4yNSAwIDAgMS0xLjI0NC41MTJsLS4xOTYuMDA5LTQuNzA3LS4wMDF2Ny4yNTFjMCAuMzguMjgyLjY5NC42NDguNzQzbC4xMDIuMDA3aDE1LjVhLjc1Ljc1IDAgMCAwIC43NDMtLjY0OGwuMDA3LS4xMDJ2LTlhLjc1Ljc1IDAgMCAwLS42NDgtLjc0M0wxOS43NSA4aC03LjcyOUw5LjY0NyA5Ljk3OVpNOC4yMDcgNS41SDQuMjVhLjc1Ljc1IDAgMCAwLS43NDMuNjQ4TDMuNSA2LjI1djIuNzQ5TDguMjA3IDlhLjc1Ljc1IDAgMCAwIC4zOTUtLjExM2wuMDg1LS4wNiAxLjg5MS0xLjU3OC0xLjg5LTEuNTc1YS43NS43NSAwIDAgMC0uMzc3LS4xNjdMOC4yMDcgNS41WiIgZmlsbD0iIzAwMDAwMCIvPjwvc3ZnPg==');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    & .tab-group-label-container {
+      &:after {
+        content: "" !important;
+        height: 2px !important;
+        position: absolute !important;
+        inset: auto 0 0 !important;
+        transform: scaleX(0) !important;
+        transition: transform 0.2s ease-in !important;
+      }
+    }
+    
+    
+    & tab{
+      display: none !important;
+      opacity: 0 !important;
+      padding: 0 !important;
+      font-size: 0 !important;
+      margin: 0 !important;
+      transition: opacity 0.25s ease-in,
+                  font-size 0.25s ease-out,
+                  margin 0.25s ease-out,
+                  padding 0.25s ease-out !important;
+    }
+  }
+}
+  
+/*Hides the splitter/resize bar, but it still is functional
+#zen-sidebar-splitter {
+    opacity: 0 !important;
+    border: none !important;
+  }
+
+/*Modify to change the webview's radius*/
+:root {
+	--zen-border-radius: 5px !important;/*If you border or gaps, then set this to 0, and set this zen.theme.content-element-separation to 0 also in about:config and also use Super Sleek UI mod from Zen mods*/
+}
+
+/*CSS I got from 'yar har fiddle dee dee'*//*Tho, it's heavily modified by 'me'*/
+/*What does it do??*/
+/*Make tab previews a lil bit different*/
+/*A different styling for tab groups, filled with animations and all*/
+/*And, at last some URl fixes, which might or might not work, I recommend you to chech that out, and disable em, if your Zen's broke*/
+
+/*Tab Preview CSS starts here*/
+#tab-preview-panel {
+  margin-right: 10px !important;
+}
+
+.tab-preview-uri {
+  scroll-behavior: smooth !important;
+  color: var(--text-color-deemphasized);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: marquee-h 10s ease-in-out infinite;
+
+  position: relative !important;
+  display: inline-block;
+  left: 0;
+
+  font-size: 12px;
+  font-weight: 400;
+  padding: 2px;
+}
+
+@keyframes marquee-h {
+    0%,
+    20%,
+    80%,
+    100% {
+      transform: translateX(0px);
+    }
+    40%,
+    60% {
+      transform: translateX(calc(-1 * max(0px, 100% - 266px)));
+    }
+}
+
+.tab-preview-title-text {
+  width: 100%;
+  line-height: 1.42;
+  max-height: 2lh;
+  overflow: hidden !important;
+  padding: 2px;
+}
+
+.tab-preview-title {
+  line-height: 1.64;
+  scroll-behavior: smooth !important;
+  overflow: hidden !important;
+  -webkit-line-clamp: none !important;
+  font-weight: var(--font-weight-bold);
+  white-space: break-spaces !important;
+  display: inline-block !important;
+  animation: marquee-v 10s ease-in-out infinite;
+}
+
+@keyframes marquee-v {
+    0%,
+    20%,
+    80%,
+    100% {
+      transform: translateY(0px);
+    }
+    40%,
+    60% {
+      transform: translateY(calc(-1 * max(0px, 100% - 2lh)));
+    }
+}
+
+/*This is the 2nd styling for tab groups, with much better and perfect animation, and different layout for tab groups*/
+/*Tab group CSS starts here*//*If you don't like this styling for tab groups, tehn go chech out line, 235, That one may suit you better, just comment/remove this tab group css, and uncomment that one, and you are good to go*/
+//tab-group{/*Remove the double slash from the front of this line to enable this tab group styling*/
+  display: grid !important;
+  background: color-mix(in srgb, var(--tab-group-color-invert) 11%, transparent) !important;/*Modify to change the level of transparency/brightness*/
+  border-radius: calc(var(--border-radius-medium) + 0px) !important;
+  margin-top: 2px !important;
+  margin-bottom: 1px !important;
+  margin-inline: 1px !important;/*The distance between the tab group's border & the sidebar's edge*/
+  border: 2px solid color-mix(in srgb, var(--tab-group-color) 50%, transparent) !important;
+  
+  & .tab-group-label-container{
+    margin-inline: 2px !important;/*The distance between the folder ico and title/label text & the tab group's border*/
+    width: 100%;
+    
+    &>label::before {/*Folder Ico*/
+      content: "" !important;
+      position: absolute !important;
+      left: 7px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 16px !important;
+      height: 16px !important;
+      background-color: var(--sidebar-text-color);
+      mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgOS41MDJWOC43NWEyLjI1IDIuMjUgMCAwIDAtMi4yNS0yLjI1aC01LjcyNWwtMi4zOC0xLjk4QTIuMjUgMi4yNSAwIDAgMCA4LjIwNCA0SDQuMjVBMi4yNSAyLjI1IDAgMCAwIDIgNi4yNWwtLjAwNCAxMS41QTIuMjUgMi4yNSAwIDAgMCA0LjI0NiAyMEgxOC40N2ExLjc1IDEuNzUgMCAwIDAgMS42OTgtMS4zMjVsMS43NS02Ljk5OGExLjc1IDEuNzUgMCAwIDAtMS42OTgtMi4xNzVIMjBaTTQuMjUgNS41aDMuOTU2YS43NS43NSAwIDAgMSAuNDguMTczbDIuNTg4IDIuMTU0YS43NS43NSAwIDAgMCAuNDguMTczaDUuOTk2YS43NS43NSAwIDAgMSAuNzUuNzV2Ljc1Mkg2LjQyNGEyLjI1IDIuMjUgMCAwIDAtMi4xODMgMS43MDRsLS43NDQgMi45NzhMMy41IDYuMjVhLjc1Ljc1IDAgMCAxIC43NS0uNzVabTEuNDQ3IDYuMDdhLjc1Ljc1IDAgMCAxIC43MjctLjU2OEgyMC4yMmEuMjUuMjUgMCAwIDEgLjI0Mi4zMWwtMS43NSA2Ljk5OWEuMjUuMjUgMCAwIDEtLjI0Mi4xODlINC4yODVhLjI1LjI1IDAgMCAxLS4yNDMtLjMxbDEuNjU1LTYuNjJaIiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    &:after{/*The separator between folder ico and label & the tabs*/
+      padding: 0px !important;
+      transform: scaleX(1) !important;
+      background-color: color-mix(in srgb, var(--tab-group-color) 50%, transparent) !important;
+      transition: transform 0.2s ease-out !important;
+    }
+    
+    & > label{/*Tab Group's folder ico and title/label text position and stuff*/
+      max-width: 100% !important;
+      padding-top: 5px !important;;
+      padding-bottom: 6px !important;;
+      padding-inline: 2.25em !important;
+      background: transparent !important;
+      border: unset !important;
+      font-weight: 600 !important;
+      text-align: unset !important;
+      color: var(--sidebar-text-color) !important;
+    }
+  }
+
+  & tab {/*And, yeah, tabs*/
+    opacity: 1 !important;
+    font-size: 12px !important;/*Modify this value to change the, ofcourse, FONT-SIZE*/
+    max-height: 2.5em !important;/*Modify this value to increase/decrease the spacing between tabs*/
+    transition: font-size 0.25s,
+                margin 0.25s,
+                padding 0.25s,
+                opacity 0.25s !important;
+  }
+  
+  &[collapsed] {
+    height: auto !important;
+    overflow: hidden !important;
+    
+    & .tab-group-label-container > label::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 7px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 16px !important;
+      height: 16px !important;
+      background-color: var(--sidebar-text-color);
+      mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC4yMDcgNGMuNDYgMCAuOTA4LjE0MSAxLjI4NC40MDJsLjE1Ni4xMkwxMi4wMjIgNi41aDcuNzI4YTIuMjUgMi4yNSAwIDAgMSAyLjIyOSAxLjkzOGwuMDE2LjE1OC4wMDUuMTU0djlhMi4yNSAyLjI1IDAgMCAxLTIuMDk2IDIuMjQ1TDE5Ljc1IDIwSDQuMjVhMi4yNSAyLjI1IDAgMCAxLTIuMjQ1LTIuMDk2TDIgMTcuNzVWNi4yNWEyLjI1IDIuMjUgMCAwIDEgMi4wOTYtMi4yNDVMNC4yNSA0aDMuOTU3Wm0xLjQ0IDUuOTc5YTIuMjUgMi4yNSAwIDAgMS0xLjI0NC41MTJsLS4xOTYuMDA5LTQuNzA3LS4wMDF2Ny4yNTFjMCAuMzguMjgyLjY5NC42NDguNzQzbC4xMDIuMDA3aDE1LjVhLjc1Ljc1IDAgMCAwIC43NDMtLjY0OGwuMDA3LS4xMDJ2LTlhLjc1Ljc1IDAgMCAwLS42NDgtLjc0M0wxOS43NSA4aC03LjcyOUw5LjY0NyA5Ljk3OVpNOC4yMDcgNS41SDQuMjVhLjc1Ljc1IDAgMCAwLS43NDMuNjQ4TDMuNSA2LjI1djIuNzQ5TDguMjA3IDlhLjc1Ljc1IDAgMCAwIC4zOTUtLjExM2wuMDg1LS4wNiAxLjg5MS0xLjU3OC0xLjg5LTEuNTc1YS43NS43NSAwIDAgMC0uMzc3LS4xNjdMOC4yMDcgNS41WiIgZmlsbD0iIzAwMDAwMCIvPjwvc3ZnPg==');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    & .tab-group-label-container {
+      &:after {
+        content: "" !important;
+        height: 2px !important;
+        position: absolute !important;
+        inset: auto 0 0 !important;
+        transform: scaleX(0) !important;
+        transition: transform 0.2s ease-in !important;
+      }
+    }
+    
+    & tab{
+      display: flex !important;
+      opacity: 0 !important;
+      padding: 0 !important;
+      font-size: 0 !important;
+      margin: 0 !important;
+      transition: opacity 0.25s ease-in,
+                  font-size 0.25s ease-out,
+                  margin 0.25s ease-out,
+                  padding 0.25s ease-out !important;
+    }
+  }
+}
+
+/*idk*/
+.tabbrowser-tab[zen-essential="true"] {
+  &[class^="identity-color-"] > .tab-stack > .tab-background {
+    background-color: color-mix(in srgb, var(--identity-tab-color), transparent 87%) !important;
+
+    > .tab-context-line { display: none !important; }
+  }
+  &[class^="identity-color-"][selected] > .tab-stack > .tab-background {
+    background: linear-gradient(color-mix(in srgb, var(--identity-tab-color), var(--tab-selected-bgcolor) 85%), var(--tab-selected-bgcolor)) !important;
+    border: 1px solid color-mix(in srgb, var(--identity-tab-color), transparent 50%) !important;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+
+/*URL fixes start here*//*If something's wrong with the browser, then disable all this */
+#urlbar {
+  overflow: hidden;
+}
+
+#urlbar[open] {
+    
+  .urlbarView-body-inner {
+    #urlbar[open] > .urlbarView > .urlbarView-body-outer > & {
+      border-top: none !important;
+    }
+  }
+}
+
+.urlbar-input-box {
+  margin-bottom: 1px !important;
+}
+  
+
+#urlbar[open] {
+  #urlbar-container:has(&) {
+    background: transparent !important;
+  }
+}
+
+#identity-box {
+  margin-inline: 0 !important;
+  background: transparent !important;
+
+  #identity-icon-box {
+    padding-inline: 2px !important;
+    margin-inline: 4px !important;
+    background: transparent !important;
+  }
+}
+
+#tracking-protection-icon-container {
+  display: none;
+}
+
+#urlbar[breakout][breakout-extend] {
+  margin-left: 0;
+  width: 0;
+}
+
+#urlbar[open]{
+  #urlbar-background {
+    /* Broken in the latest beta and twilight, only this piece not the one below
+    background: color-mix(in srgb, light-dark(#fff, var(--zen-colors-tertiary)) 60%, transparent 60%) !important;
+    */
+    /*A Different kind of style for the bottom buttons*//*It also set the background according to your theme color or something, I guess?*//*Cuz, my zen's broke lol, so I can't be sure*/
+    background: var(--zen-colors-tertiary) !important;
+    backdrop-filter: blur(50px) !important;
+  }
+    .search-one-offs {
+    padding: 3px !important;
+    margin-bottom: 8px !important;
+    background: var(--urlbarView-highlight-background) !important;
+    border-radius: 8px !important;
+    border-top: none !important;
+  }
+  
+
+  
+/* userContent.css */
+  
+}
