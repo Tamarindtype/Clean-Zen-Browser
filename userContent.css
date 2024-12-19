@@ -14,11 +14,19 @@
 @-moz-document domain(x.com) {
   body,
   html,
-  .css-175oi2r.r-18u37iz.r-16y2uox.r-1wbh5a2.r-tzz3ar.r-1pi2tsx.r-buy8e9.r-mfh4gg.r-2eszeu.r-10m9thr.r-lltvgl,
-  .css-175oi2r.r-kemksi.r-184en5c, /* What is Happening? */
-  .css-175oi2r.r-f8sm7e.r-13qz1uu.r-1ye8kvj, /* Home Timeline */
-  .css-175oi2r.r-1awozwy.r-aqfbo4.r-kemksi.r-18u37iz.r-1iud8zs.r-1a8r3js.r-1vsu8ta.r-1xcajam.r-ipm5af.r-136ojw6.r-1hycxz /* Search */ {
+   .css-175oi2r.r-kemksi.r-184en5c, /* Post */
+  .css-175oi2r.r-1awozwy.r-aqfbo4.r-kemksi.r-18u37iz.r-1iud8zs.r-1a8r3js.r-1vsu8ta.r-1xcajam.r-ipm5af.r-136ojw6.r-1hycxz, /* Search */
+  [aria-label="Home Timeline"] /* Home Timeline */ {
     background: transparent !important;
+  }
+
+  .css-175oi2r.r-h06w64.r-uc7nor.r-kemksi.r-st84sj.r-j3xhw6.r-qo02w8 /* Message (idk it doesn't work) */{
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .css-175oi2r.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-ku1wi2.r-1udh08x /* Right Side Info */{
+    background: rgba(0, 0, 0, 0.45) !important;
   }
 
   [aria-label="Grok"], /* Remove Grok */
