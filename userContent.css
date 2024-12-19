@@ -21,11 +21,6 @@
     background: transparent !important;
   }
 
-  .css-146c3p1.r-4iw3lz.r-1xk2f4g.r-109y4c4.r-1udh08x.r-wwvuq4.r-u8s1d.r-92ng3h, /* Trending Now */
-  .css-175oi2r.r-173mn98.r-ikuq2u.r-hvns9x.r-1jte41z.r-5wli1b /* Messages */ {
-    background: rgba(0, 0, 0, 0.25) !important;
-  }
-
   [aria-label="Grok"], /* Remove Grok */
   [aria-label="Jobs"], /* Remove Jobs */
   [aria-label="Premium"], /* Remove Premium */
